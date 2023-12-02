@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load a model
-list_fruit = []
+
 # Function to perform object detection using YOLO
 def perform_object_detection(image_bytes):
     # Check if the input is a URL or bytes of an image
@@ -25,14 +25,18 @@ def perform_object_detection(image_bytes):
     results = model.predict(image, save=True, imgsz=640, conf=0.25)
     # Assuming the YOLO model returns predictions
     
-    print(results[0].boxes.cls)
-    print(results[0].boxes.cls[0])
+
     # cls = int(results[0].boxes.cls)
-    
+    list_fruit = []
     for i in results[0].boxes.cls:
           list_fruit.append(names[int(i)])
     print(list_fruit)
-
+    result_fruit = []
+    fruit =  ["apple", "banana", "avocado", "kiwi", "lemon", "mango", "pineapple", "strawberry"]
+ 
+          
+ 
+         
     # # Save to a file
     # with open('predictions.txt', 'w') as file:
     #     file.write(str(predictions))  # Saving predictions as a string
