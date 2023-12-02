@@ -4,6 +4,7 @@ from io import BytesIO
 from ultralytics import YOLO
 import requests
 from flask_cors import CORS
+import dill
 
 app = Flask(__name__)
 CORS(app)
