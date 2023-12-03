@@ -46,7 +46,7 @@ def perform_object_detection(image_bytes):
 
 @app.route('/') 
 def index():
-    return 'Hello World!' 
+    return 'Hello Boss!'
 
 
 # @app.route('/getResults' , methods=['get'])
